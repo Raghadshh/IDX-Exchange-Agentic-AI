@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types skills/property-search/test.ts",
+    "verify": "npm run typecheck && npm test"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
