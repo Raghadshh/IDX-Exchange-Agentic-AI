@@ -3,10 +3,14 @@
   "type": "module",
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "test": "node --experimental-strip-types skills/property-search/test.ts",
-    "verify": "npm run typecheck && npm test"
+    "test": "node --experimental-strip-types skills/property-search/test.ts && node --experimental-strip-types skills/property-search/test-week3.ts",
+    "verify": "npm run typecheck && npm test",
+    "search": "node --env-file-if-exists=.env --experimental-strip-types skills/property-search/run.ts"
   },
   "devDependencies": {
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "mysql2": "^3.24.5"
   }
 }

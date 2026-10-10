@@ -23,16 +23,13 @@ function matchAmount(query: string, pattern: RegExp): number | null {
   return match ? readAmount(match[1], match[2]?.toLowerCase()) : null;
 }
 
-/** Turns one property search into filters. Missing details stay null. */
 export function parsePropertyQuery(query: string): PropertyFilters {
   const text = query.trim();
   const lower = text.toLowerCase();
 
-  // Pick up the city after words like "in" or "near".
   const cityMatch = text.match(/\b(?:in|near|around|city of)\s+([a-z][a-z .'-]*?)(?=\s+(?:for\s+less\s+than|under|below|less than|up to|with|without|at least|over|above|minimum|min\b|max\b|no more than|that|which|and\b|hoa\b|\d)|[,.;!?]|$)/i);
   const city = cityMatch?.[1].trim().replace(/\s+/g, " ") ?? null;
 
-  // Read prices like 900k, 1.5M, or 1,500,000.
   const pricePattern = new RegExp(String.raw`\b(?:under|below|less than|up to|no more than|max(?:imum)?(?: price)?(?: of)?|budget(?: of)?)\s*${amount}`, "gi");
   const priceMatch = [...lower.matchAll(pricePattern)].find((match) =>
     !/\b(?:hoa|association\s+(?:fee|dues))\s*$/.test(lower.slice(0, match.index))
@@ -52,7 +49,6 @@ export function parsePropertyQuery(query: string): PropertyFilters {
   else if (/\b(?:single[ -]family(?:\s+(?:homes?|residences?))?|sfh)\b/.test(lower)) type = "SingleFamilyResidence";
   else if (/\b(?:unimproved\s+land|vacant\s+land|land\s+(?:lots?|parcels?)|land)\b/.test(lower)) type = "UnimprovedLand";
 
-  // Keep "no pool" and "no view" as "False".
   const pool = /\b(?:no|without)\s+(?:a\s+|an\s+)?(?:private\s+)?pool\b/.test(lower) ? "False"
     : /\bpool\b/.test(lower) ? "True" : null;
   const hasView = /\b(?:no|without)\s+(?:a\s+|an\s+)?(?:\w+\s+)?view\b/.test(lower) ? "False"
