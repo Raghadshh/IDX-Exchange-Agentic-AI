@@ -2,21 +2,9 @@
 
 AI Agentic Engineer internship project for IDX Exchange.
 
-This repo has my work for the IDX Exchange AI Agentic Engineer internship.
+Week 1: Set up OpenClaw and the MLS data.
+Week 2: Parsed property requests into search filters.
+Week 3: Searched active and sold MLS listings with pagination.
+Week 4: Added session memory and follow-up questions for conversational search.
 
-## Module 2: Property search filters
-
-The skill in `skills/property-search/` turns a normal property search sentence into filters for `rets_property`. The database search comes later.
-
-Use Node.js 24 or newer. Run this in the VS Code PowerShell terminal:
-
-```powershell
-npm.cmd install
-npm.cmd run verify
-```
-
-This checks the TypeScript and prints the results for all 14 test queries. To try your own query, run:
-
-```powershell
-node --experimental-strip-types skills/property-search/cli.ts 'Show me 3-bedroom condos in Irvine under $1.5M with a pool'
-```
+Run `npm.cmd run verify` to check the code. For a conversation, run `npm.cmd run chat -- --user demo --message 'Find homes in Irvine'`, then use the same user ID for each reply.
