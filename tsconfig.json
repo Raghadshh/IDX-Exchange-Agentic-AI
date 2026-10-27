@@ -8,5 +8,5 @@
     "allowImportingTsExtensions": true,
     "skipLibCheck": true
   },
-  "include": ["skills/property-search/**/*.ts"]
+  "include": ["skills/**/*.ts"]
 }

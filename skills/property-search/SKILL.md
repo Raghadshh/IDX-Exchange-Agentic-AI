@@ -5,6 +5,8 @@ description: Handle multi-turn property searches from WhatsApp or chat, remember
 
 # Property search
 
+Use OpenClaw's shell `exec` tool to run the command below. The `terminal` tool only controls already-open Control UI tabs and cannot run this command.
+
 For a WhatsApp property search, run the chat command once per incoming message. Use the sender's stable WhatsApp ID for `--user`, and pass the exact message for `--message`. Use the same sender ID on every turn. Reply with the command's output exactly; it may be a follow-up question or live property cards. Do not invent listings. Keep different senders' IDs separate.
 
 From PowerShell:

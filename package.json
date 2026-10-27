@@ -3,10 +3,11 @@
   "type": "module",
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "test": "node --experimental-strip-types skills/property-search/test.ts && node --experimental-strip-types skills/property-search/test-week3.ts && node --experimental-strip-types skills/property-search/test-week4.ts",
+    "test": "node --experimental-strip-types skills/property-search/test.ts && node --experimental-strip-types skills/property-search/test-week3.ts && node --experimental-strip-types skills/property-search/test-week4.ts && node --experimental-strip-types skills/market-statistics/test.ts",
     "verify": "npm run typecheck && npm test",
     "search": "node --env-file-if-exists=.env --experimental-strip-types skills/property-search/run.ts",
-    "chat": "node --env-file-if-exists=.env --experimental-strip-types skills/property-search/chat.ts"
+    "chat": "node --env-file-if-exists=.env --experimental-strip-types skills/property-search/chat.ts",
+    "market": "node --env-file-if-exists=.env --experimental-strip-types skills/market-statistics/cli.ts"
   },
   "devDependencies": {
     "typescript": "^5.9.3"
