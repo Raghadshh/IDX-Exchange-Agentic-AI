@@ -8,8 +8,10 @@ Week 3: Searched active and sold MLS listings with pagination.
 Week 4: Added session memory and follow-up questions for conversational search.
 Week 5: Added sold-market metrics, current inventory, and 12-month city trends.
 Week 6: Added local embedding search for five similar active listings.
+Week 7: Ranked similar homes with detail and embedding scores and checked prices against recent sales.
 
 Run `npm.cmd run verify` to check the code. For a conversation, run `npm.cmd run chat -- --user demo --message 'Find homes in Irvine'`, then use the same user ID for each reply.
 For market statistics, run `npm.cmd run market -- --city 'San Diego'` (optionally add `--zip` or `--type`).
 
 For semantic search, run `venv\Scripts\python.exe -m pip install -r requirements-semantic.txt`, `npm.cmd run semantic:index` once, then `npm.cmd run semantic -- 'charming craftsman with mountain views and character'`.
+For recommendations, run `npm.cmd run recommend -- --mls '1178201812'`.

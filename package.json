@@ -9,7 +9,8 @@
     "chat": "node --env-file-if-exists=.env --experimental-strip-types skills/property-search/chat.ts",
     "market": "node --env-file-if-exists=.env --experimental-strip-types skills/market-statistics/cli.ts",
     "semantic:index": "venv\\Scripts\\python.exe skills\\semantic-search\\cli.py index",
-    "semantic": "venv\\Scripts\\python.exe skills\\semantic-search\\cli.py search"
+    "semantic": "venv\\Scripts\\python.exe skills\\semantic-search\\cli.py search",
+    "recommend": "venv\\Scripts\\python.exe skills\\recommendation\\cli.py"
   },
   "devDependencies": {
     "typescript": "^5.9.3"
